@@ -20,6 +20,7 @@ class RaidManager(object):
         endskcache_tpl = self.tool.get_endskcache_tp()
 
         self.conf.get_raids()
+        #todo excute cmd
 
     def create_no_raid(self):
         no_raid_tpl = self.tool.get_no_raid_tp()
