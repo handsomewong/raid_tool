@@ -1,4 +1,5 @@
 1.conf.txt,like this:
+```
 {
     "add_raids": [{
             "adapter":"0",
@@ -30,7 +31,7 @@
         logic_dirvers:[1,2..3]}
     ]
 }
-
+```
 2.config env
 export "CLI_TOOL_PATH"=/opt/MegaRAID/MegaCli/
 export "RAID_TOOL_PATH"=/home/code/raid_tool
