@@ -8,10 +8,11 @@ MAPPING = {
 }
 
 from common import configure
+from common import importutils
 
 class RaidManager(object):
     def __init__(self, tool_name):
-        self.tool = cli_tool.importutils.import_object(MAPPING[tool_name])
+        self.tool = importutils.import_object(MAPPING[tool_name])
         self.conf = configure.Configura()
 
     def create_raid(self):
