@@ -33,7 +33,8 @@
 }
 ```
 2.config env
-export "CLI_TOOL_PATH"=/opt/MegaRAID/MegaCli/
-export "RAID_TOOL_PATH"=/home/code/raid_tool
-
+```
+#export "CLI_TOOL_PATH"=/opt/MegaRAID/MegaCli/
+#export "RAID_TOOL_PATH"=/home/code/raid_tool
+```
 3.install python-fire
