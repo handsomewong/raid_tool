@@ -7,7 +7,7 @@ MAPPING = {
     'mega_raid':'cli_tool.mega_raid.mega_raid.MegaCli',
 }
 
-import configure
+from common import configure
 
 class RaidManager(object):
     def __init__(self, tool_name):
