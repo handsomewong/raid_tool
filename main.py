@@ -10,8 +10,7 @@ from cli_tool import manager
 if __name__ == '__main__':
     print 'excute like this:./main.py MegaRAID/storcli create/makejobb/del'
     driver = manager.RaidManager(os.sys.argv[1])
-    import pdb
-    pdb.set_trace()
+
     op = os.sys.argv[2]
     if op == 'create':
         driver.create_raid()
