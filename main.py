@@ -7,5 +7,12 @@ if CLI_TOOL_PATH not in sys.path:
 from cli_tool import manager
 
 if __name__ == '__main__':
-    driver = manager.RaidManager('mega_raid')
-    driver.create_raid()
+    print 'excute like this:./main.py MegaRAID/storcli create/makejobb/del'
+    driver = manager.RaidManager(os.sys.argv[1])
+    op = os.sys.argv[2]
+    if op == 'create':
+        driver.create_raid()
+    elif op == 'makejobb':
+        pass
+    else:
+        pass

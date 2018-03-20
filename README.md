@@ -40,4 +40,3 @@ This tool is trying to build raids with all physical drives at one time, and we 
 #export "CLI_TOOL_PATH"=/opt/MegaRAID/MegaCli/
 #export "RAID_TOOL_PATH"=/home/code/raid_tool
 ```
-3.install python-fire

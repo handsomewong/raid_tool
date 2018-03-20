@@ -4,7 +4,7 @@ if CLI_TOOL_PATH not in sys.path:
     sys.path.append(CLI_TOOL_PATH)
 
 MAPPING = {
-    'mega_raid':'cli_tool.mega_raid.mega_raid.MegaCli',
+    'MegaRAID':'cli_tool.mega_raid.mega_raid.MegaCli',
 }
 
 from common import configure
@@ -19,8 +19,10 @@ class RaidManager(object):
         raid_tpl = self.tool.get_raid_tp()
         endskcache_tpl = self.tool.get_endskcache_tp()
 
-        self.conf.get_raids()
+        raids = self.conf.get_raids()
         #todo excute cmd
+        cmd = endskcache_tpl % raids
+        os.popen(cmd).readlines()
 
     def create_no_raid(self):
         no_raid_tpl = self.tool.get_no_raid_tp()
@@ -29,4 +31,3 @@ class RaidManager(object):
     def del_logic_drives(self):
         vd_tp = self.tool.get_del_vd_tp()
         self.conf.get_no_raid()
-        
