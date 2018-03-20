@@ -1,14 +1,20 @@
+import os
+CLI_TOOL_PATH = os.getenv('CLI_TOOL_PATH', '')
+if CLI_TOOL_PATH not in sys.path:
+    sys.path.append(CLI_TOOL_PATH)
 
+import json
+import file
 
 class Configura(object):
     def __init__(self):
-        self.conf = json.decode()
+        self.conf = json.load(file(CLI_TOOL_PATH + 'conf.txt'))
 
     def get_raids(self):
-        return
+        return self.conf['add_raids']
 
-    def get_logic_drives(self):
-        return
+    def get_del_logic_drives(self):
+        return self.conf['del_logic_drive']
 
     def get_no_raid(self):
-        return
+        return self.conf['non_raid']

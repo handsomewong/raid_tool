@@ -7,7 +7,6 @@ MAPPING = {
     'MegaRAID':'cli_tool.mega_raid.mega_raid.MegaCli',
 }
 
-from common import configure
 from common import importutils
 
 class RaidManager(object):
@@ -16,18 +15,24 @@ class RaidManager(object):
         self.conf = configure.Configura()
 
     def create_raid(self):
-        raid_tpl = self.tool.get_raid_tp()
-        endskcache_tpl = self.tool.get_endskcache_tp()
+        build_cmds = self.tool.get_build_raid_cmds()
+        for cmd in build_cmds:
+            result = os.popen(cmd).readlines()
+            print result
 
-        raids = self.conf.get_raids()
-        #todo excute cmd
-        cmd = endskcache_tpl % raids
-        os.popen(cmd).readlines()
+            endskcache_cmd = self.tool.get_endskcache_cmd(result)
+            result = os.popen(endskcache_cmd).readlines()
+            print result
 
     def create_no_raid(self):
-        no_raid_tpl = self.tool.get_no_raid_tp()
-        self.conf.get_logic_drives()
+        build_cmds = self.tool.get_no_raid_cmds()
+        for cmd in build_cmds:
+            result = os.popen(cmd).readlines()
+            print result
+        
 
     def del_logic_drives(self):
-        vd_tp = self.tool.get_del_vd_tp()
-        self.conf.get_no_raid()
+        del_cmds = self.tool.get_del_vd_cmds()
+        for cmd in del_cmds:
+            result = os.popen(cmd).readlines()
+            print result
