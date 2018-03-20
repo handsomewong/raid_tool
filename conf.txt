@@ -18,11 +18,17 @@
     ],
     "non_raid": [
         {"adapter":"0",
-        "physical_drivers": "$enclosure1:$slot2,$enclosure3:$slot3,...."},
+        "physical_drivers": "$enclosure1:$slot2"},
         {"adapter":"1",
-        "physical_drivers": "$enclosure1:$slot2,$enclosure3:$slot3,...."}
+        "physical_drivers": "$enclosure1:$slot2"}
     ],
     "del_logic_drive":[
+        {"adapter":"0",
+        logic_dirvers:[1,2..3]},
+        {"adapter":"1",
+        logic_dirvers:[1,2..3]}
+    ],
+    "enable_disk_cache":[
         {"adapter":"0",
         logic_dirvers:[1,2..3]},
         {"adapter":"1",

@@ -8,5 +8,5 @@ class RaidToolBase(object):
     def get_del_vd_cmds(self):
         pass
 
-    def get_endskcache_cmd(self, virtual_disk):
+    def get_endskcache_cmd(self):
         pass

@@ -18,3 +18,6 @@ class Configura(object):
 
     def get_no_raid(self):
         return self.conf['non_raid']
+
+    def get_enable_disks(self):
+        return self.conf['enable_disk_cache']
