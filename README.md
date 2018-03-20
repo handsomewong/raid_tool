@@ -1,4 +1,7 @@
-1.conf.txt,like this:
+This tool is trying to build raids with all physical drives at one time, and we also want it to
+ support different vendor's servers
+
+1.configure conf.txt like this:
 ```
 {
     "add_raids": [{
@@ -32,7 +35,7 @@
     ]
 }
 ```
-2.config env
+2.configure enviroment variable
 ```
 #export "CLI_TOOL_PATH"=/opt/MegaRAID/MegaCli/
 #export "RAID_TOOL_PATH"=/home/code/raid_tool

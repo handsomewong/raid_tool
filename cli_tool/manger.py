@@ -29,3 +29,4 @@ class RaidManager(object):
     def del_logic_drives(self):
         vd_tp = self.tool.get_del_vd_tp()
         self.conf.get_no_raid()
+        
