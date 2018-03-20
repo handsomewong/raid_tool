@@ -1,9 +1,9 @@
 import os
 import sys
 
-RAID_TOOL_PATH = os.getenv('RAID_TOOL_PATH', '')
-if RAID_TOOL_PATH not in sys.path:
-    sys.path.append(RAID_TOOL_PATH)
+CLI_TOOL_PATH = os.getenv('CLI_TOOL_PATH', '')
+if CLI_TOOL_PATH not in sys.path:
+    sys.path.append(CLI_TOOL_PATH)
 
 from cli_tool import base
 from common import configure
@@ -11,7 +11,7 @@ from common import configure
 class MegaCli(base.RaidToolBase):
     def __init__(self):
         self.conf = configure.Configura()
-        self.tool_path = RAID_TOOL_PATH + 'MegaCli64'
+        self.tool_path = CLI_TOOL_PATH + 'MegaCli64'
 
     def get_build_raid_cmds(self):
         '''
@@ -34,8 +34,8 @@ class MegaCli(base.RaidToolBase):
             ]
         '''
         cmds = []
-        tp = self.tool_path + 
-            ' -CfgLdAdd -r%(raid_level)s[%(physical_drivers)s] ' + 
+        tp = self.tool_path + \
+            ' -CfgLdAdd -r%(raid_level)s[%(physical_drivers)s] ' + \
             '%(write_policy)s %(read_policy)s Cached -a%(adapter)s'
         raids = self.conf.get_raids()
         for raid in raids:
@@ -55,7 +55,7 @@ class MegaCli(base.RaidToolBase):
         '''
         cmds = []
         no_raids = self.conf.get_no_raid()
-        tp = self.tool_path + 
+        tp = self.tool_path + \
             ' -PDMakeJBOD -PhysDrv[%(physical_drivers)s] -a%(adapter)s'
         for raid in no_raids:
             cmd = tp % raid

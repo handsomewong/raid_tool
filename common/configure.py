@@ -1,15 +1,14 @@
 import os
 import sys
-CLI_TOOL_PATH = os.getenv('CLI_TOOL_PATH', '')
-if CLI_TOOL_PATH not in sys.path:
-    sys.path.append(CLI_TOOL_PATH)
+ROOT_PATH = os.getenv('ROOT_PATH', '')
+if ROOT_PATH not in sys.path:
+    sys.path.append(ROOT_PATH)
 
 import json
-import file
 
 class Configura(object):
     def __init__(self):
-        self.conf = json.load(file(CLI_TOOL_PATH + 'conf.txt'))
+        self.conf = json.load(file(ROOT_PATH + '/conf.txt'))
 
     def get_raids(self):
         return self.conf['add_raids']

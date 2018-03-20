@@ -1,37 +1,44 @@
 {
     "add_raids": [{
-            "adapter":"0",
+            "adapter": "0",
             "raid_level": "0",
             "physical_drivers": "$enclosure1:$slot0,$enclosure3:$slot11,....",
-            "read_policy": "no read ahead",
-            "write_policy": "write back",
-            "disk_cache_policy": "enabled"
+            "read_policy": "NORA",
+            "write_policy": "WB"
         },
         {
-            "adapter":"0",
+            "adapter": "0",
             "raid_level": "1",
             "physical_drivers": "$enclosure1:$slot2,$enclosure3:$slot3,....",
-            "read_policy": "read ahead",
-            "write_policy": "write back",
-            "disk_cache_policy": "enabled"
+            "read_policy": "NORA",
+            "write_policy": "WB"
         }
     ],
-    "non_raid": [
-        {"adapter":"0",
-        "physical_drivers": "$enclosure1:$slot2"},
-        {"adapter":"1",
-        "physical_drivers": "$enclosure1:$slot2"}
+    "non_raid": [{
+            "adapter": "0",
+            "physical_drivers": "$enclosure1:$slot2"
+        },
+        {
+            "adapter": "1",
+            "physical_drivers": "$enclosure1:$slot2"
+        }
     ],
-    "del_logic_drive":[
-        {"adapter":"0",
-        logic_dirvers:[1,2..3]},
-        {"adapter":"1",
-        logic_dirvers:[1,2..3]}
+    "del_logic_drive": [{
+            "adapter": "0",
+            "logic_dirvers": [1, 2, 3]
+        },
+        {
+            "adapter": "1",
+            "logic_dirvers": [1, 2, 3]
+        }
     ],
-    "enable_disk_cache":[
-        {"adapter":"0",
-        logic_dirvers:[1,2..3]},
-        {"adapter":"1",
-        logic_dirvers:[1,2..3]}
+    "enable_disk_cache": [{
+            "adapter": "0",
+            "logic_dirvers": [1, 2, 3]
+        },
+        {
+            "adapter": "1",
+            "logic_dirvers": [1, 2, 3]
+        }
     ]
 }

@@ -1,9 +1,9 @@
 import os
 import sys
 
-CLI_TOOL_PATH = os.getenv('CLI_TOOL_PATH', '')
-if CLI_TOOL_PATH not in sys.path:
-    sys.path.append(CLI_TOOL_PATH)
+ROOT_PATH = os.getenv('ROOT_PATH', '')
+if ROOT_PATH not in sys.path:
+    sys.path.append(ROOT_PATH)
 
 from cli_tool import manager
 
