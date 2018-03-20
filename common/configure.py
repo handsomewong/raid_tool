@@ -1,4 +1,5 @@
 import os
+import sys
 CLI_TOOL_PATH = os.getenv('CLI_TOOL_PATH', '')
 if CLI_TOOL_PATH not in sys.path:
     sys.path.append(CLI_TOOL_PATH)

@@ -1,4 +1,5 @@
 import os
+import sys
 
 RAID_TOOL_PATH = os.getenv('RAID_TOOL_PATH', '')
 if RAID_TOOL_PATH not in sys.path:

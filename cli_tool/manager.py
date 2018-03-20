@@ -1,14 +1,16 @@
 import os
+import sys
+
 CLI_TOOL_PATH = os.getenv('CLI_TOOL_PATH', '')
 if CLI_TOOL_PATH not in sys.path:
     sys.path.append(CLI_TOOL_PATH)
 
+import time
+from common import importutils
+
 MAPPING = {
     'MegaRAID':'cli_tool.mega_raid.mega_raid.MegaCli',
 }
-
-import time
-from common import importutils
 
 class RaidManager(object):
     def __init__(self, tool_name):
